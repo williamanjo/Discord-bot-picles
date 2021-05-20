@@ -35,9 +35,9 @@ client.on('message', message => {
 client.on("ready", () => { 
   
   var date = moment("20/05/2021","DD/MM/YYYY");
-  client.channels.cache.get(birthdaychannel).send("birthday test : "+ date;
+  client.channels.cache.get(birthdaychannel).send("birthday test : "+ date.format("DD/MM"));
   if(moment().format("DD/MM") == date.format("DD/MM") ){
-  client.channels.cache.get(birthdaychannel).send("birthday test : "+ date;
+  client.channels.cache.get(birthdaychannel).send("birthday test : "+ date);
 }});
    
 
