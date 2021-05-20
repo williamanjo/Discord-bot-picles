@@ -7,6 +7,6 @@ module.exports.run = async (client, message, args) => {
   else if (pessoa.toLowerCase() == "bellz"){message.channel.send("O aniversário de Bellz é 13/12/1997 !");}
   else if (pessoa.toLowerCase() == "júlio"){message.channel.send("O aniversário de Júlio é  22/08/2006 !");}
   else if (pessoa.toLowerCase() == "blaiizer"){message.channel.send("O aniversário de Blaiizer é  27/02/2002 !");}
-  else { message.channel.send("Que pena não esta cadastrado esse usuario , Mande ao Administrador o ID (Use o comando :id usuario).")}
+  else { message.channel.send("Que pena não esta cadastrado esse usuario , Mande ao Administrador o ID ("+"ID ("+ message.mentions.users.first().username +"): " + message.mentions.users.first().id+").")}
   
 };
