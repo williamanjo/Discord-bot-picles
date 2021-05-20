@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const birthdaychannel = 767583483135787009;
-var cont = 0;
+const schedule = require('node-schedule');
+const date = new Date(2021, 05, 20, 0, *, *);
+
 app.get("/", (request, response) => {
   const ping = new Date();
   ping.setHours(ping.getHours() - 3);
@@ -32,10 +34,10 @@ client.on('message', message => {
   }
 });
 client.on("ready", async () => {  
-  var d = new Date();
-  
-  if(d.toLocaleDateString()==d.toLocaleDateString() && cont != 1) {
-    birthdaychannel.send("birthday test"+ d.toLocaleDateString()) ; cont = 1 }
+  const job = schedule.scheduleJob(date, function(){
+  birthdaychannel.send("birthday test"+ d.toLocaleDateString()) ;
+});
+   
 })
 
 client.login(process.env.TOKEN); //Ligando o Bot caso ele consiga acessar o token
