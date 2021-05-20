@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const birthdaychannel = 767583483135787009;
+var cont = 0;
 app.get("/", (request, response) => {
   const ping = new Date();
   ping.setHours(ping.getHours() - 3);
@@ -29,5 +31,11 @@ client.on('message', message => {
     console.error('Erro:' + err);
   }
 });
+client.on("ready", async () => {  
+  var d = new Date();
+  
+  if(d.toLocaleDateString()=="20/05/2021" && cont != 1) {
+    birthdaychannel.send("birthday test") ; cont = 1 }
+})
 
 client.login(process.env.TOKEN); //Ligando o Bot caso ele consiga acessar o token
