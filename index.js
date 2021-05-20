@@ -34,8 +34,8 @@ client.on('message', message => {
 client.on("ready", async () => {  
   var d = new Date();
   
-  if(d.toLocaleDateString()=="20/05/2021" && cont != 1) {
-    birthdaychannel.send("birthday test") ; cont = 1 }
+  if(d.toLocaleDateString()==d.toLocaleDateString() && cont != 1) {
+    birthdaychannel.send("birthday test"+ d.toLocaleDateString()) ; cont = 1 }
 })
 
 client.login(process.env.TOKEN); //Ligando o Bot caso ele consiga acessar o token
