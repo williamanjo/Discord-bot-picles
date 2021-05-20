@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const birthdaychannel = 767583483135787009;
 const schedule = require('node-schedule');
-const date = new Date(2021, 05, 20, 0, *, *);
+
 
 app.get("/", (request, response) => {
   const ping = new Date();
@@ -33,7 +33,8 @@ client.on('message', message => {
     console.error('Erro:' + err);
   }
 });
-client.on("ready", async () => {  
+client.on("ready", async () => { 
+  var date = new Date(2021, 05, 20, 0, *, *);
   const job = schedule.scheduleJob(date, function(){
   birthdaychannel.send("birthday test"+ d.toLocaleDateString()) ;
 });
