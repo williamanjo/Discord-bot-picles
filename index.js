@@ -32,13 +32,17 @@ client.on('message', message => {
     console.error('Erro:' + err);
   }
 });
-client.on("ready", async () => { 
+client.on("ready", () => { 
   
   var date = moment("20/05/2021","DD/MM/YYYY");
   //client.channels.cache.get(birthdaychannel).send("birthday test : "+ date.format("DD/MM"));
   if(moment().format("DD/MM") == date.format("DD/MM") ){
   client.channels.cache.get(birthdaychannel).send("birthday test : "+ date.format("DD/MM"));
-}});
+  }
+  if(moment().format("DD/MM") == moment("21/05/2021","DD/MM/YYYY").format("DD/MM") ){
+  client.channels.cache.get(birthdaychannel).send("birthday test : "+ date.format("DD/MM"));
+  }
+});
    
 
 client.login(process.env.TOKEN); //Ligando o Bot caso ele consiga acessar o token
