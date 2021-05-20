@@ -33,7 +33,7 @@ client.on('message', message => {
     console.error('Erro:' + err);
   }
 });
-client.on("ready", async () => { 
+client.on("ready", () => { 
   var date = new Date(2021, 05, 20, 0, *, *);
   const job = schedule.scheduleJob(date, function(){
   birthdaychannel.send("birthday test"+ d.toLocaleDateString()) ;
