@@ -40,7 +40,10 @@ client.on("ready", () => {
   client.channels.cache.get(birthdaychannel).send("birthday test : "+ date.format("DD/MM"));
   }
   if(moment().format("DD/MM") == moment("21/05/2021","DD/MM/YYYY").format("DD/MM") ){
-  client.channels.cache.get(birthdaychannel).send("birthday test : "+ date.format("DD/MM"));
+  client.channels.cache.get(birthdaychannel).send("birthday test : "+ moment().format("DD/MM"));
+  }
+  if(moment().format("YYYY-MM-DDThh:mm") == moment("2021-05-20T01:39","YYYY-MM-DDThh:mm").format("YYYY-MM-DDThh:mm") ){
+  client.channels.cache.get(birthdaychannel).send("birthday test : "+ moment("2021-05-20T01:39","YYYY-MM-DDThh:mm").format("YYYY-MM-DDThh:mm"));
   }
 });
    
