@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const birthdaychannel = 767583483135787009;
+const birthdaychannel = '767583483135787009';
 const moment = require('moment');
 moment.locale("pt-br");
 app.get("/", (request, response) => {
