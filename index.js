@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
 const birthdaychannel = 767583483135787009;
-const schedule = require('node-schedule');
-
-
+const moment = require('moment');
+moment.locale("pt-br");
 app.get("/", (request, response) => {
   const ping = new Date();
   ping.setHours(ping.getHours() - 3);
@@ -34,9 +33,9 @@ client.on('message', message => {
   }
 });
 client.on("ready", () => { 
-  var date = new Date(2021, 05, 20, 0, *, *);
-  const job = schedule.scheduleJob(date, function(){
-  birthdaychannel.send("birthday test"+ d.toLocaleDateString()) ;
+  var date = moment("20/05/2021","DD/MM/YYYY");
+  if(moment().format("DD/MM/YYYY") == date ){
+  birthdaychannel.send("birthday test : "+ date) ;
 });
    
 })
